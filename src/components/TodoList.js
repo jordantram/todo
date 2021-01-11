@@ -6,7 +6,7 @@ import { Checkbox } from 'semantic-ui-react'
 
 class TodoList extends React.Component {
   render() {
-    const todoItems = this.props.todos.map((todo, index) => {
+    const todoItems = this.props.todos.map(todo => {
       return (
           <li key={todo.id}>
             <Checkbox className="cb" label={{ children: todo.text }}/>
@@ -16,9 +16,7 @@ class TodoList extends React.Component {
     })
 
     return (
-      <div>
-        <ul>{todoItems}</ul>
-      </div>
+      <ul>{todoItems}</ul>
     );
   }
 };
