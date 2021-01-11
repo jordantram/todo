@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoList.css';
-import { Checkbox } from 'semantic-ui-react'
+import { Checkbox, Icon } from 'semantic-ui-react'
 
 // re-factor as function
 
@@ -9,8 +9,8 @@ class TodoList extends React.Component {
     const todoItems = this.props.todos.map(todo => {
       return (
           <li key={todo.id}>
-            <Checkbox className="cb" label={{ children: todo.text }}/>
-            <i className="close link icon" onClick={() => {this.props.deleteItem(todo.id)}}></i>
+            <Checkbox className="cb" label={{ children: todo.text }} />
+            <Icon className="pointer" name="trash" onClick={() => {this.props.deleteItem(todo.id)}} />
           </li>
       )
     })

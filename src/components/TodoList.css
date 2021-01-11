@@ -9,3 +9,7 @@ li {
 .cb {
   margin-right: 1em
 }
+
+.pointer {
+  cursor: pointer
+}
