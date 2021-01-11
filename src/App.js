@@ -28,7 +28,7 @@ class App extends Component {
   onFormSubmit = (event) => {
     event.preventDefault();
 
-    if (this.state.input !== '') {
+    if (this.state.input) {
       const todo = {
         id: generateKey(this.state.input),
         text: this.state.input
@@ -41,6 +41,12 @@ class App extends Component {
     }
   } 
 
+  deleteItem = (id) => {
+    this.setState({ 
+      todos: this.state.todos.filter(todo => todo.id !== id)
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -48,7 +54,7 @@ class App extends Component {
           <h1>Todo</h1>
         </div>
         <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
-        <TodoList todos={this.state.todos}/>
+        <TodoList todos={this.state.todos} deleteItem={this.deleteItem}/>
       </div>
     )
   }

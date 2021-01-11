@@ -1,3 +1,11 @@
 li {
-  list-style: none
+  list-style: none;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  margin-left: 1em
+}
+
+.cb {
+  margin-right: 1em
 }

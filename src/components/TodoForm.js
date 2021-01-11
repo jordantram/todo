@@ -1,5 +1,7 @@
 import React from 'react';
 
+// re-factor as function
+
 class TodoForm extends React.Component {
   render() {
     return (
