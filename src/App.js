@@ -50,7 +50,9 @@ class App extends Component {
     return (
       <div className='todo-main'>
         <h1>Todo</h1>
-        <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
+        <div className='center'>
+          <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
+        </div>
         <TodoList todos={this.state.todos} deleteItem={this.deleteItem}/>
       </div>
     )
