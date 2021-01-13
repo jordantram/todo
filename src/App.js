@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
-// import { Checkbox } from 'semantic-ui-react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
@@ -49,10 +48,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div>
-          <h1>Todo</h1>
-        </div>
+      <div className='todo-main'>
+        <h1>Todo</h1>
         <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
         <TodoList todos={this.state.todos} deleteItem={this.deleteItem}/>
       </div>

@@ -1,15 +1,13 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-.center {
+.todo-main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -9,11 +9,12 @@ class TodoList extends React.Component {
     const todoItems = this.props.todos.map(todo => {
       return (
           <li key={todo.id}>
-            <Checkbox className="cb" label={{ children: todo.text }} />
+            <Checkbox />
+            <span>{todo.text}</span>
             <Icon className="pointer" name="trash" onClick={() => {this.props.deleteItem(todo.id)}} />
           </li>
       )
-    })
+    });
 
     return (
       <ul>{todoItems}</ul>
