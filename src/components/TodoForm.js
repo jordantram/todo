@@ -8,8 +8,8 @@ class TodoForm extends React.Component {
     return (
       <form onSubmit={this.props.onFormSubmit}>
         <i className='large angle down icon'></i>
-        <input type='text' placeholder='What do you need to do?' className='todo-text'
-                value={this.props.input} onChange={this.props.onInputChange}></input>
+        <input className='todo-text' type='text' placeholder='What do you need to do?'
+               value={this.props.input} onChange={this.props.onInputChange}></input>
       </form>
     );
   }

@@ -9,8 +9,8 @@ class TodoList extends React.Component {
     const todoItems = this.props.todos.map(todo => {
       return (
           <li className='todo-box' key={todo.id}>
-            <Checkbox />
-            <span className='todo-text todo-list-item'>{todo.text}</span>
+            <Checkbox style={{ marginLeft: '0.2rem' }} />
+            <span className='todo-text' style={{ marginLeft: '0.5rem' }}>{todo.text}</span>
             <Icon className='pointer' name='trash' onClick={() => {this.props.deleteItem(todo.id)}} />
           </li>
       )

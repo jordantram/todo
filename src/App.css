@@ -6,13 +6,17 @@
   text-align: center;
 }
 
-.shadow {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
 .center {
   display: flex;
   justify-content: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .todo-box {
@@ -35,21 +39,13 @@
   border-radius: 3px;
 }
 
-.todo-list-item {
-  width: 250px;
-  margin-right: 18.5rem;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
 ul {
   padding-left: 0;
+  list-style: none;
 }
 
-li {
-  list-style: none;
+input, span, form {
+  width: 100%;
 }
 
 input:focus {
@@ -60,10 +56,4 @@ form {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
 }
-
-input {
-  width: 100%;
-}
-
