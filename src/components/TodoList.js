@@ -10,7 +10,7 @@ class TodoList extends React.Component {
       return (
           <li className='todo-box' key={todo.id}>
             <Checkbox />
-            <span className='todo-text'>{todo.text}</span>
+            <span className='todo-text todo-list-item'>{todo.text}</span>
             <Icon className='pointer' name='trash' onClick={() => {this.props.deleteItem(todo.id)}} />
           </li>
       )
