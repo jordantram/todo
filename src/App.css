@@ -6,7 +6,49 @@
   text-align: center;
 }
 
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .center {
   display: flex;
   justify-content: center;
+}
+
+.todo-box {
+  background: white;
+  border-bottom: 1px solid #D7D7D7;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.todo-form {
+  margin-bottom: 1.5rem;
+}
+
+.todo-text {
+  margin-right: 18.5rem;
+  padding: 1rem;
+  width: 250px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+input:focus {
+  outline: none;
 }
