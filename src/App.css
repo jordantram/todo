@@ -52,6 +52,10 @@ input:focus {
   outline: none;
 }
 
+span {
+  margin-left: 0.5rem;
+}
+
 form {
   display: flex;
   flex-direction: row;
