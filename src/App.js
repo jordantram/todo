@@ -11,8 +11,6 @@ const generateKey = (pre) => {
   return `${ pre }_${ new Date().getTime() }`;
 }
 
-const localStorage = window.localStorage;
-
 class App extends Component {
   constructor() {
     super();
@@ -45,7 +43,7 @@ class App extends Component {
       }), () => {
         localStorage.setItem('todos', JSON.stringify(this.state.todos));
       });
-      
+
       this.setState({ input: '' });
     }
   } 
