@@ -21,8 +21,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const storageTodos = JSON.parse(localStorage.getItem('todos'));
-    this.setState({ todos: storageTodos });
+    if (localStorage.length) {
+      const storageTodos = JSON.parse(localStorage.getItem('todos'));
+      this.setState({ todos: storageTodos });
+    }
   }
 
   onInputChange = (event) => {
