@@ -11,6 +11,8 @@ const generateKey = (pre) => {
   return `${ pre }_${ new Date().getTime() }`;
 }
 
+const localStorage = window.localStorage;
+
 class App extends Component {
   constructor() {
     super();
@@ -18,6 +20,11 @@ class App extends Component {
       input: '',
       todos: []
     }
+  }
+
+  componentDidMount() {
+    const storageTodos = JSON.parse(localStorage.getItem('todos'));
+    this.setState({ todos: storageTodos });
   }
 
   onInputChange = (event) => {
@@ -35,7 +42,10 @@ class App extends Component {
 
       this.setState(prevState => ({
         todos: [...prevState.todos, todo]
-      }));
+      }), () => {
+        localStorage.setItem('todos', JSON.stringify(this.state.todos));
+      });
+      
       this.setState({ input: '' });
     }
   } 
@@ -43,6 +53,8 @@ class App extends Component {
   deleteItem = (id) => {
     this.setState({ 
       todos: this.state.todos.filter(todo => todo.id !== id)
+    }, () => {
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
     });
   }
 
