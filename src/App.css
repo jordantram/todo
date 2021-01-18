@@ -6,11 +6,6 @@
   text-align: center;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-}
-
 .pointer {
   cursor: pointer;
 }
@@ -19,18 +14,21 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.f-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
 .todo-box {
   background: white;
   border-bottom: 1px solid #D7D7D7;
   text-align: left;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1rem;
 }
 
 .todo-form {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .todo-text {
@@ -39,31 +37,46 @@
   border-radius: 3px;
 }
 
-.info-tab {
-  display: flex;
-  justify-content: space-between;
+.todo-list {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .filter-buttons {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .filter-buttons > button, .transparent-button {
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 1px solid transparent;
+  cursor: pointer;
   overflow: hidden;
-  outline:none;
+  outline: none;
 }
 
-ul {
+.filter-buttons > button:hover {
+  border: 1px solid lightgrey;
+}
+
+.filter-buttons > button.selected:hover {
+  border: 1px solid black;
+}
+
+.filter-buttons > button.selected {
+  border: 1px solid black;
+}
+
+.clear-button {
   padding-left: 0;
-  list-style: none;
-  margin-bottom: 0;
-  margin-top: 0;
+  padding-right: 0;
+}
+
+.clear-button:hover {
+  text-decoration: underline;
 }
 
 input, span, form {
@@ -82,4 +95,27 @@ form {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.info-tab {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.left {
+  float: left;
+  width: 90px;
+}
+
+.right {
+  float: right;
+  width: 108px;
+}
+
+.center {
+  margin: 0 auto;
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
 }

@@ -22,7 +22,7 @@ class TodoList extends React.Component {
       }
 
       return (
-          <li className='todo-box' key={todo.id}>
+          <li className='todo-box f-space-between' key={todo.id}>
             <Checkbox checked={isCompleted} style={{ marginLeft: '0.2rem' }} onChange={markTodoAs} />
             <span className='todo-text'>{todo.text}</span>
             <Icon className='pointer' style={{ marginBottom: '0.35rem' }} name='trash' onClick={() => {this.props.deleteItem(todo.id)}} />
@@ -31,7 +31,7 @@ class TodoList extends React.Component {
     });
 
     return (
-      <ul>{todoItems}</ul>
+      <ul className='todo-list'>{todoItems}</ul>
     );
   }
 };

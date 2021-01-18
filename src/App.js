@@ -87,7 +87,7 @@ class App extends Component {
         <h1>Todo</h1>
         <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
         <div className='shadow'>
-          <InfoTab numItems={this.state.todos.length} clearCompleted={this.clearCompleted} 
+          <InfoTab todos={this.state.todos} numItems={this.state.todos.length} clearCompleted={this.clearCompleted} 
                    selectedFilter={this.state.selectedFilter} onFilterButtonPress={this.onFilterButtonPress} />
           <TodoList todos={this.state.todos} deleteItem={this.deleteItem} markTodoAs={this.markTodoAs}
                    selectedFilter={this.state.selectedFilter} />

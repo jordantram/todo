@@ -6,7 +6,7 @@ import '../App.css'
 class TodoForm extends React.Component {
   render() {
     return (
-      <div className='center todo-box todo-text todo-form shadow'>
+      <div className='todo-box todo-text todo-form shadow'>
         <form onSubmit={this.props.onFormSubmit}>
           <i className='large angle down icon'></i>
           <input className='todo-text' type='text' placeholder='What do you need to do?'
