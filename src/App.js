@@ -4,6 +4,7 @@ import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import InfoTab from './components/InfoTab';
 
 /* generateKey function taken from 
    https://stackoverflow.com/questions/39549424/how-to-create-unique-keys-for-react-elements */
@@ -62,10 +63,11 @@ class App extends Component {
     return (
       <div className='todo-main'>
         <h1>Todo</h1>
-        <div className='center todo-box todo-form shadow'>
-          <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
+        <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
+        <div className='shadow'>
+          <InfoTab numItems={this.state.todos.length} />
+          <TodoList todos={this.state.todos} deleteItem={this.deleteItem}/>
         </div>
-        <TodoList todos={this.state.todos} deleteItem={this.deleteItem}/>
       </div>
     )
   }

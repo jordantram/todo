@@ -39,9 +39,31 @@
   border-radius: 3px;
 }
 
+.info-tab {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.transparent-button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
 ul {
   padding-left: 0;
   list-style: none;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 input, span, form {

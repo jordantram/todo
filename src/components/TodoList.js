@@ -17,7 +17,7 @@ class TodoList extends React.Component {
     });
 
     return (
-      <ul className='shadow'>{todoItems}</ul>
+      <ul>{todoItems}</ul>
     );
   }
 };
