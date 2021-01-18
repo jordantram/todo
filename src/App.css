@@ -50,7 +50,7 @@
   justify-content: space-between;
 }
 
-.transparent-button {
+.filter-buttons > button, .transparent-button {
   background-color: Transparent;
   background-repeat:no-repeat;
   border: none;

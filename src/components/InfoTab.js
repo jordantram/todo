@@ -14,11 +14,11 @@ class InfoTab extends React.Component {
           }
         </div>
         <div className='filter-buttons'>
-          <button className='transparent-button'>All</button>
-          <button className='transparent-button'>Active</button>
-          <button className='transparent-button'>Completed</button>
+          <button onClick={() => {this.props.onFilterButtonPress('all')}}>All</button>
+          <button onClick={() => {this.props.onFilterButtonPress('active')}}>Active</button>
+          <button onClick={() => {this.props.onFilterButtonPress('completed')}}>Completed</button>
         </div>
-        <button className='transparent-button'>Clear Completed</button>
+        <button className='transparent-button' onClick={this.props.clearCompleted}>Clear Completed</button>
       </div>
     );
   }
