@@ -83,14 +83,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className='todo-main'>
-        <h1>Todo</h1>
-        <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
-        <div className='shadow'>
-          <InfoTab todos={this.state.todos} numItems={this.state.todos.length} clearCompleted={this.clearCompleted} 
-                   selectedFilter={this.state.selectedFilter} onFilterButtonPress={this.onFilterButtonPress} />
-          <TodoList todos={this.state.todos} deleteItem={this.deleteItem} markTodoAs={this.markTodoAs}
-                   selectedFilter={this.state.selectedFilter} />
+      <div className='background'>
+        <div className='todo-main'>
+          <div className='header'>
+            <h1>GET IT DONE</h1>
+          </div>
+          <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
+          <div className='shadow'>
+            <InfoTab todos={this.state.todos} numItems={this.state.todos.length} clearCompleted={this.clearCompleted} 
+                    selectedFilter={this.state.selectedFilter} onFilterButtonPress={this.onFilterButtonPress} />
+            <TodoList todos={this.state.todos} deleteItem={this.deleteItem} markTodoAs={this.markTodoAs}
+                    selectedFilter={this.state.selectedFilter} />
+          </div>
         </div>
       </div>
     )

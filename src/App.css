@@ -1,9 +1,19 @@
+.background {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(#16161d, #1f1f3a, #3b2f4a);
+}
+
 .todo-main {
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 570px;
   margin: auto;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .pointer {
@@ -11,7 +21,18 @@
 }
 
 .shadow {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.header {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: left;
+  font-family: "Josefin Sans",sans-serif;
+  letter-spacing: 15px;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
 }
 
 .f-space-between {
@@ -20,21 +41,25 @@
 }
 
 .todo-box {
-  background: white;
-  border-bottom: 1px solid #D7D7D7;
+  /*background: white;
+  border-bottom: 1px solid #D7D7D7;*/
   text-align: left;
   align-items: center;
   padding: 1rem;
-}
-
-.todo-form {
-  margin-bottom: 2.5rem;
+  background-color: #262e4c;
+  border-bottom: 1px solid #1c2340;
+  color: #b1b2c9;
 }
 
 .todo-text {
-  padding: 1rem;
+  padding: 0.5rem;
   border: 2px solid transparent;
-  border-radius: 3px;
+}
+
+.todo-form {
+  border-radius: 5px;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
 }
 
 .todo-list {
@@ -42,32 +67,43 @@
   list-style: none;
   margin-bottom: 0;
   margin-top: 0;
+  border-radius: 5px;
 }
 
-.filter-buttons {
+.filter-buttons-wrapper {
   display: flex;
   flex-direction: row;
 }
 
-.filter-buttons > button, .transparent-button {
+.todo-input {
+  background-color: #262e4c;
+  color: #b1b2c9;
+}
+
+.todo-input:placeholder-shown {
+  font-style: italic;
+}
+
+.filter-buttons-wrapper > button, .transparent-button {
   background-color: transparent;
   background-repeat: no-repeat;
   border: 1px solid transparent;
   cursor: pointer;
   overflow: hidden;
   outline: none;
+  color: #b1b2c9;
 }
 
-.filter-buttons > button:hover {
-  border: 1px solid lightgrey;
+.filter-buttons-wrapper > button:hover {
+  border: 1px solid rgb(87, 87, 87);
 }
 
-.filter-buttons > button.selected:hover {
-  border: 1px solid black;
+.filter-buttons-wrapper > button.selected:hover {
+  border: 1px solid #b1b2c9;
 }
 
-.filter-buttons > button.selected {
-  border: 1px solid black;
+.filter-buttons-wrapper > button.selected {
+  border: 1px solid #b1b2c9;
 }
 
 .clear-button {
@@ -101,6 +137,7 @@ form {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  padding: 0.7rem;
 }
 
 .left {

@@ -13,7 +13,7 @@ class InfoTab extends React.Component {
             : `${this.props.numItems} items left`
           }
         </div>
-        <div className='filter-buttons center'>
+        <div className='filter-buttons-wrapper center'>
           <button className={this.props.selectedFilter === 'all' ? 'selected' : null} 
                   onClick={() => {this.props.onFilterButtonPress('all')}}>All</button>
           <button className={this.props.selectedFilter === 'active' ? 'selected' : null} 

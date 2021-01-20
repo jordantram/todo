@@ -25,7 +25,8 @@ class TodoList extends React.Component {
           <li className='todo-box f-space-between' key={todo.id}>
             <Checkbox checked={isCompleted} style={{ marginLeft: '0.2rem' }} onChange={markTodoAs} />
             <span className='todo-text'>{todo.text}</span>
-            <Icon className='pointer' style={{ marginBottom: '0.35rem' }} name='trash' onClick={() => {this.props.deleteItem(todo.id)}} />
+            <Icon className='pointer' style={{ marginBottom: '0.35rem' }} name='trash' 
+                  onClick={() => {this.props.deleteItem(todo.id)}} />
           </li>
       )
     });
