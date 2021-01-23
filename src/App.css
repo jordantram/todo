@@ -94,16 +94,18 @@
   color: #b1b2c9;
 }
 
+/*
 .filter-buttons-wrapper > button:hover {
   border: 1px solid rgb(87, 87, 87);
-}
+}*/
 
 .filter-buttons-wrapper > button.selected:hover {
-  border: 1px solid #b1b2c9;
+  border-bottom: 3px solid rgb(109, 109, 255);
 }
 
 .filter-buttons-wrapper > button.selected {
-  border: 1px solid #b1b2c9;
+  border-bottom: 3px solid rgb(109, 109, 255);
+  color: rgb(109, 109, 255);
 }
 
 .clear-button {
