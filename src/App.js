@@ -86,7 +86,7 @@ class App extends Component {
       <div className='background'>
         <div className='todo-main'>
           <div className='header'>
-            <h1>GET IT DONE</h1>
+            <h1 className='header-text'>GET IT DONE</h1>
           </div>
           <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
           <div className='shadow'>

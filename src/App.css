@@ -28,10 +28,12 @@
   margin-top: 4rem;
   margin-bottom: 4rem;
   text-align: center;
-  font-family: "Josefin Sans",sans-serif;
-  letter-spacing: 15px;
-  font-size: 40px;
-  font-weight: 700;
+}
+
+.header-text {
+  letter-spacing: 12px;
+  font-size: 36px;
+  text-transform: uppercase;
   color: #fff;
 }
 
@@ -52,6 +54,7 @@
 }
 
 .todo-text {
+  font-size: 1.25em;
   padding: 0.5rem;
   border: 2px solid transparent;
 }
@@ -78,6 +81,9 @@
 .todo-input {
   background-color: #262e4c;
   color: #b1b2c9;
+  border-width: 0;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
 }
 
 .todo-input:placeholder-shown {
@@ -94,18 +100,13 @@
   color: #b1b2c9;
 }
 
-/*
 .filter-buttons-wrapper > button:hover {
-  border: 1px solid rgb(87, 87, 87);
-}*/
-
-.filter-buttons-wrapper > button.selected:hover {
-  border-bottom: 3px solid rgb(109, 109, 255);
+  /*border: 1px solid rgb(87, 87, 87);*/
+  color: white;
 }
 
 .filter-buttons-wrapper > button.selected {
-  border-bottom: 3px solid rgb(109, 109, 255);
-  color: rgb(109, 109, 255);
+  color: rgb(78, 78, 221);
 }
 
 .clear-button {
@@ -114,7 +115,7 @@
 }
 
 .clear-button:hover {
-  text-decoration: underline;
+  color: white;
 }
 
 input, span, form {
