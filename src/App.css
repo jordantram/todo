@@ -106,7 +106,7 @@
 }
 
 .filter-buttons-wrapper > button.selected {
-  color: rgb(51, 51, 255);
+  color: rgb(60, 60, 255);
 }
 
 .completed {
@@ -180,5 +180,9 @@ form {
 @media only screen and (max-width: 650px) {
   .todo-main {
     width: 90%;
+  }
+
+  .info-tab {
+    font-size: 12px;
   }
 }
