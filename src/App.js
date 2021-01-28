@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-// import logo from './logo.svg';
-import './App.css';
-import 'semantic-ui-css/semantic.min.css';
+import React, { useState, useEffect } from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import InfoTab from './components/InfoTab';
+import './App.css';
+import 'semantic-ui-css/semantic.min.css';
 
 const generateKey = (pre) => {
   /* credit for generateKey function:
@@ -12,93 +11,75 @@ const generateKey = (pre) => {
   return `${ pre }_${ new Date().getTime() }`;
 }
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      input: '',
-      todos: [],
-      selectedFilter: 'all'
-    }
+function App() {
+  const [input, setInput] = useState('');
+  const [selectedFilter, setSelectedFilter] = useState('all');
+  const [todos, setTodos] = useState(() => {
+    return localStorage.length ? JSON.parse(localStorage.getItem('todos')) : [];
+  }); // Passing anonymous function so that the function is only called once
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]); // Only re-run this effect if todos changes
+
+  const onInputChange = (event) => {
+    setInput(event.target.value);
   }
 
-  componentDidMount() {
-    if (localStorage.length) {
-      const storageTodos = JSON.parse(localStorage.getItem('todos'));
-      this.setState({ todos: storageTodos });
-    }
-  }
-
-  updateLocalStorage = () => {
-    localStorage.setItem('todos', JSON.stringify(this.state.todos));
-  }
-
-  onInputChange = (event) => {
-    this.setState({ input: event.target.value });
-  }
-
-  onFormSubmit = (event) => {
+  const onFormSubmit = (event) => {
     event.preventDefault();
 
-    if (this.state.input) {
+    if (input) {
       const todo = {
-        id: generateKey(this.state.input),
-        text: this.state.input,
+        id: generateKey(input),
+        text: input,
         status: 'active'
       }
 
-      this.setState(prevState => ({
-        todos: [...prevState.todos, todo]
-      }), this.updateLocalStorage);
+      setTodos(prevTodos => [...prevTodos, todo]);
 
-      this.setState({ input: '' });
+      setInput('');
     }
   } 
 
-  onFilterButtonPress = (filter) => {
-    this.setState({ selectedFilter: filter });
+  const onFilterButtonPress = (filter) => {
+    setSelectedFilter(filter);
   }
 
-  deleteItem = (id) => {
-    this.setState({ 
-      todos: this.state.todos.filter(todo => todo.id !== id)
-    }, this.updateLocalStorage);
+  const deleteItem = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
   }
 
-  markTodoAs = (id, status) => {
-    const items = [...this.state.todos];
+  const markTodoAs = (id, status) => {
+    const items = [...todos];
     const index = items.map(todo => todo.id).indexOf(id);
     const item = {...items[index]};
     item.status = status;
     items[index] = item;
 
-    this.setState({ todos: items }, this.updateLocalStorage);
+    setTodos(items);
   }
 
-  clearCompleted = () => {
-    this.setState({ 
-      todos: this.state.todos.filter(todo => todo.status === 'active')
-    }, this.updateLocalStorage);
+  const clearCompleted = () => {
+    setTodos(todos.filter(todo => todo.status === 'active'));
   }
 
-  render() {
-    return (
-      <div className='background'>
-        <div className='todo-main'>
-          <div className='header'>
-            <h1 className='header-text'>GET IT DONE</h1>
-          </div>
-          <TodoForm input={this.state.input} onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit}/>
+  return (
+    <div className='background'>
+      <div className='todo-main'>
+        <div className='header'>
+          <h1 className='header-text'>GET IT DONE</h1>
+        </div>
+          <TodoForm input={input} onInputChange={onInputChange} onFormSubmit={onFormSubmit}/>
           <div className='shadow'>
-            <InfoTab todos={this.state.todos} numItems={this.state.todos.length} clearCompleted={this.clearCompleted} 
-                    selectedFilter={this.state.selectedFilter} onFilterButtonPress={this.onFilterButtonPress} />
-            <TodoList todos={this.state.todos} deleteItem={this.deleteItem} markTodoAs={this.markTodoAs}
-                    selectedFilter={this.state.selectedFilter} />
-          </div>
+          <InfoTab todos={todos} numItems={todos.length} clearCompleted={clearCompleted} 
+                  selectedFilter={selectedFilter} onFilterButtonPress={onFilterButtonPress} />
+          <TodoList todos={todos} deleteItem={deleteItem} markTodoAs={markTodoAs}
+                  selectedFilter={selectedFilter} />
         </div>
       </div>
-    )
-  }
+    </div>
+  );
 }
 
 export default App;

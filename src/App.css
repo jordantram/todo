@@ -106,7 +106,7 @@
 }
 
 .filter-buttons-wrapper > button.selected {
-  color: rgb(78, 78, 221);
+  color: rgb(51, 51, 255);
 }
 
 .clear-button {
@@ -143,6 +143,12 @@ form {
   padding: 0.7rem;
 }
 
+.checkbox {
+  margin-left: 0.5em;
+  margin-right: 0.1em;
+  transform: scale(1.1);
+}
+
 .left {
   float: left;
   width: 90px;
@@ -158,4 +164,10 @@ form {
   width: 160px;
   display: flex;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 650px) {
+  .todo-main {
+    width: 90%;
+  }
 }
