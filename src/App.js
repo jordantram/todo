@@ -80,8 +80,8 @@ function App() {
         <div className='header'>
           <h1 className='header-text'>GET IT DONE</h1>
         </div>
-          <TodoForm input={input} onInputChange={onInputChange} onFormSubmit={onFormSubmit} />
-          <div className='shadow'>
+        <TodoForm input={input} onInputChange={onInputChange} onFormSubmit={onFormSubmit} />
+        <div className='shadow'>
           <InfoTab todos={todos} numItems={todos.length} clearCompleted={clearCompleted} 
                   selectedFilter={selectedFilter} onFilterButtonPress={onFilterButtonPress} />
           <TodoList todos={todos} deleteItem={deleteItem} markTodoAs={markTodoAs}
