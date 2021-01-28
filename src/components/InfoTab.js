@@ -22,7 +22,7 @@ const InfoTab = ({ todos, numItems, clearCompleted, selectedFilter, onFilterButt
         {todos.filter(todo => todo.status === 'completed').length
           ? <button className='transparent-button clear-button' 
                     onClick={clearCompleted}>Clear Completed</button>
-          : <button className='transparent-button clear-button' onClick={clearCompleted}></button>}
+          : null}
       </div>
     </div>
   );
