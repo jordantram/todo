@@ -149,6 +149,12 @@ form {
   transform: scale(1.1);
 }
 
+.footer {
+  margin-top: 2em;
+  color: #b1b2c9;
+  text-align: center;
+}
+
 .left {
   float: left;
   width: 90px;

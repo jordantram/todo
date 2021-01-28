@@ -64,6 +64,16 @@ function App() {
     setTodos(todos.filter(todo => todo.status === 'active'));
   }
 
+  const onDragEnd = (result) => {
+    if (result.destination) {
+      const items = [...todos];
+      const [reorderedItem] = items.splice(result.source.index, 1);
+      items.splice(result.destination.index, 0, reorderedItem);
+
+      setTodos(items);
+    }
+  }
+
   return (
     <div className='background'>
       <div className='todo-main'>
@@ -75,7 +85,10 @@ function App() {
           <InfoTab todos={todos} numItems={todos.length} clearCompleted={clearCompleted} 
                   selectedFilter={selectedFilter} onFilterButtonPress={onFilterButtonPress} />
           <TodoList todos={todos} deleteItem={deleteItem} markTodoAs={markTodoAs}
-                  selectedFilter={selectedFilter} />
+                  selectedFilter={selectedFilter} onDragEnd={onDragEnd} />
+        </div>
+        <div className='footer'>
+          <h5>Drag and drop items to reorder!</h5>
         </div>
       </div>
     </div>
