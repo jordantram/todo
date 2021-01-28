@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-const TodoForm = ({ input, onInputChange, onFormSubmit, onToggleAllItems }) => {
+const TodoForm = ({ input, onInputChange, onFormSubmit }) => {
   return (
     <div className='todo-box todo-text todo-form shadow'>
       <form onSubmit={onFormSubmit}>
