@@ -98,6 +98,14 @@
   overflow: hidden;
   outline: none;
   color: #b1b2c9;
+  padding-right: 1px;
+  padding-left: 1px;
+}
+
+.filter-buttons-wrapper > .clear-button {
+  overflow: visible;
+  width: auto;
+  height: auto;
 }
 
 .filter-buttons-wrapper > button:hover {
@@ -156,6 +164,7 @@ form {
 
 .footer {
   margin-top: 2.5em;
+  margin-bottom: 2.5em;
   color: #b1b2c9;
   text-align: center;
 }
@@ -183,6 +192,19 @@ form {
   }
 
   .info-tab {
-    font-size: 12px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .left {
+    max-width: 82px; 
+    text-align: center;
+    margin-right: 0.5em;
+  }
+
+  .right {
+    max-width: 72px;
+    margin-left: 0.5em;
   }
 }
