@@ -109,6 +109,11 @@
   color: rgb(51, 51, 255);
 }
 
+.completed {
+  text-decoration: line-through;
+  color: #55596d;
+}
+
 .clear-button {
   padding-left: 0;
   padding-right: 0;
@@ -150,7 +155,7 @@ form {
 }
 
 .footer {
-  margin-top: 2em;
+  margin-top: 2.5em;
   color: #b1b2c9;
   text-align: center;
 }

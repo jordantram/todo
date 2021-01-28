@@ -21,7 +21,7 @@ const TodoList = ({ todos, deleteItem, markTodoAs, selectedFilter, onDragEnd }) 
         {(provided) => (
           <li className='todo-box f-space-between' ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
             <Checkbox className='checkbox' checked={isCompleted} onChange={() => markTodoAs(todo.id, statusOnChange)} />
-            <span className='todo-text'>{todo.text}</span>
+            <span className={isCompleted ? 'todo-text completed' : 'todo-text'}>{todo.text}</span>
             <Icon className='pointer' style={{ marginBottom: '0.35rem' }} name='trash' 
                   onClick={() => deleteItem(todo.id)} />
           </li>
