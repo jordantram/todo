@@ -109,7 +109,6 @@
 }
 
 .filter-buttons-wrapper > button:hover {
-  /*border: 1px solid rgb(87, 87, 87);*/
   color: white;
 }
 
@@ -157,7 +156,7 @@ form {
 }
 
 .checkbox {
-  margin-left: 0.5em;
+  margin-left: 0.2em;
   margin-right: 0.1em;
   transform: scale(1.1);
 }
