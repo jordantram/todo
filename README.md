@@ -2,7 +2,7 @@
 
 A to-do list app built in React which features local storage to allow users' lists to persist after closing. The app allows for
 filtering between active and completed items and was tested and optimized for a responsive experience on all devices. Also makes
-use of some cool UI features using Beautiful Drag and Drop API and Semantic-UI. View [here.](https://get-it-done-today.netlify.app/)
+use of some cool UI features using Beautiful Drag and Drop API and Semantic-UI. View the live demo [here.](https://get-it-done-today.netlify.app/)
 
 ## Available Scripts
 
